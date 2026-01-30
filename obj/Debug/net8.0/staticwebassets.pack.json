@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/obj/Debug/net8.0/compressed/pwah2ripec.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/obj/Debug/net8.0/scopedcss/bundle/MiPruebaBlazor.styles.css",
+      "PackagePath": "staticwebassets/MiPruebaBlazor.styles.css"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/icon-192.png",
+      "PackagePath": "staticwebassets/icon-192.png"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/media/linux/9214505714504081/MiPruebaBlazor/wwwroot/sample-data/weather.json",
+      "PackagePath": "staticwebassets/sample-data/weather.json"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MiPruebaBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.MiPruebaBlazor.props",
+      "PackagePath": "build\\MiPruebaBlazor.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MiPruebaBlazor.props",
+      "PackagePath": "buildMultiTargeting\\MiPruebaBlazor.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MiPruebaBlazor.props",
+      "PackagePath": "buildTransitive\\MiPruebaBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

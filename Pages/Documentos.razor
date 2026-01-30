@@ -1,0 +1,87 @@
+@page "/documentos"
+@using MiPruebaBlazor.Models
+@using System.Net.Http.Headers
+@inject HttpClient Http
+
+<h3>Ziur Software Contable</h3>
+
+@if (listaDeDocumentos == null)
+{
+    <p>Cargando datos de la prueba técnica</p>
+}
+else
+{
+    <table class="table table-bordered">
+        
+        <thead>
+            <div class="mb-3">
+    <input type="text" 
+           class="form-control" 
+           placeholder="Buscar por descripción o código..." 
+           @bind-value="filtroBusqueda" 
+           @bind-value:event="oninput" />
+</div>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>¿Está Activa?</th>
+            </tr>
+        </thead>
+        <tbody>
+             
+            @foreach (var doc in DocumentosFiltrados)
+            {
+                <tr>
+                    <td>@doc.Codigo</td>
+                    <td>@doc.Descripcion</td>
+                    <td>
+                    @if (doc.VActiva) {
+                        <span class="badge bg-success">Activo</span>
+                    } else {
+                        <span class="badge bg-danger">Inactivo</span>
+                    }
+                </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+}
+
+@code {
+    @code {
+    private string filtroBusqueda = ""; // Aquí guardaremos el texto del buscador
+
+    // Esta propiedad filtrará la lista automáticamente
+    private List<Documento>? DocumentosFiltrados => 
+        string.IsNullOrWhiteSpace(filtroBusqueda) 
+            ? listaDeDocumentos 
+            : listaDeDocumentos?.Where(d => 
+                d.Descripcion.Contains(filtroBusqueda, StringComparison.OrdinalIgnoreCase) || 
+                d.Codigo.ToString().Contains(filtroBusqueda)).ToList();
+    
+
+}
+    // Aquí guardamos los datos que nos dé la API
+    private List<Documento>? listaDeDocumentos;
+
+    // 1. Aqui se inicia la llamada a la API apenas inicializa el componente
+    protected override async Task OnInitializedAsync()
+    {
+        //token
+        var miToken = "ae8bad44-7348-11ee-b962-0242ac120002";
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", miToken);
+
+        try 
+        {
+            // 2. Le pedimos los datos a la dirección de la API
+            string rutaApi = "Ziur.API/basedatos_01/ZiurServiceRest.svc/api/DocumentosFillsCombos";
+            listaDeDocumentos = await Http.GetFromJsonAsync<List<Documento>>(rutaApi);
+        }
+        catch (Exception ex)
+        {
+           
+            Console.WriteLine("Error al cargar: " + ex.Message);
+        }
+    }
+}
